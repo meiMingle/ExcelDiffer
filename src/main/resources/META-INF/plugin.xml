@@ -1,0 +1,41 @@
+<idea-plugin>
+    <id>com.chesterccw.ExcelDiffer</id>
+    <name>ExcelDiffer</name>
+    <vendor email="chesterccw@163.com" url="http://www.xuegaogame.com">IceGames</vendor>
+
+    <description><![CDATA[
+        This is a plugin for Excel file.
+        You can compare the contents of two Excel files in IDEs.
+        Three formats of [xls, xlsx, csv] are supported.
+    ]]></description>
+
+    <change-notes><![CDATA[
+      - 2021.04
+        <ul>
+            <li>Support the version 2021.1.</li>
+        </ul>
+      - 2020.08
+        <ul>
+            <li>Support comparison function.</li>
+            <li>Support jump in different content.</li>
+        </ul>
+    ]]></change-notes>
+
+    <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <!-- Add your extensions here -->
+    </extensions>
+
+    <actions>
+        <group id="ExcelDiffer" text="Add to ExcelDiffer" description="Add to ExcelDiffer">
+            <add-to-group group-id="ProjectViewPopupMenu" anchor="first"/>
+            <group id="ExcelDifferGroup" text="Add To ExcelDiffer" popup="true">
+                <action id="AddToLeft" class="com.chesterccw.exceldiffer.ExcelDifferAction" text="Left Container"/>
+                <action id="AddToRight" class="com.chesterccw.exceldiffer.ExcelDifferAction" text="Right Container"/>
+            </group>
+        </group>
+    </actions>
+</idea-plugin>
